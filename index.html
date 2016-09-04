@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Browserify example</title>
+    <meta name="author" content="Kimmo Brunfeldt">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="bundle.css">
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="uppercase">Browserify example</h3>
+
+      <p class="intro">By copy-pasting this project template, you get quickly started in frontend development.
+        Before
+        doing that, <a href="#summary-of-tools">please go through</a>
+        the explanation of why all these tools are needed.
+      </p>
+
+      <h6>Features</h6>
+      <ul>
+        <li>
+          Provides basic but understandable features which can be fine-tuned later
+        </li>
+        <li>
+          <code>require('x')</code>
+          syntax in your frontend to organize code and
+          use NPM modules
+        </li>
+        <li>New ES6 features via Babel</li>
+        <li>Automatically build <b>bundle.js</b> or <b>bundle.css</b> after changes to code</li>
+        <li>Minify JS and CSS for production</li>
+        <li>Build time configuration for JS</li>
+        <li>LESS to organize CSS code across files plus other neat features</li>
+        <li>Autoprefixer so you can stop worrying about CSS browser prefixes</li>
+        <li>No livereload</li>
+      </ul>
+
+      <h6>Commands</h6>
+
+      <ul class="no-list-styling">
+        <li>
+          <code>npm start</code> Open your browser at <a href="http://localhost:8080">http://localhost:8080</a>
+          and start coding.
+        </li>
+        <li>
+          <code>npm run build</code> To build minified versions of <b>bundle.js</b> and <b>bundle.css</b> for production.
+        </li>
+      </ul>
+
+
+      <h6 id="how-it-works">How it works</h6>
+
+      <code>npm start</code>
+
+      <p>
+
+      </p>
+
+      <h6 id="summary-of-tools">Summary of tools</h6>
+
+
+
+      <ul>
+        <li>
+          <a href="https://github.com/substack/node-browserify">Browserify</a>
+          to divide JS code across files.
+          <ul>
+            <li>
+              <a href="https://github.com/babel/babelify">Babel transform</a> for Browserify
+              with <a href="https://babeljs.io/docs/plugins/preset-es2015/">ES2015 preset</a>
+              to support new ES6 features.
+            </li>
+
+            <li>
+              <a href="https://github.com/hughsk/envify">Envify transform</a>
+              for Browserify to allow build time configuration.
+
+              <p>
+                As an example, you could build
+                a <b>bundle.js</b> which points to production backend with:
+                <code>
+                  API_URL=https://my-app-prod.herokuapp.com npm run build
+                </code>
+              </p>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://github.com/less/less.js">Less.js</a>
+          to divide CSS code across files.
+        </li>
+
+        <li>
+          <a href="https://github.com/jakubpawlowicz/clean-css">clean-css</a>
+          for minifying CSS.
+        </li>
+
+        <li>
+          <a href="https://github.com/mishoo/UglifyJS">UglifyJS</a>
+          for minifying JS.
+        </li>
+
+        <li>
+          <a href="https://github.com/indexzero/http-server">http-server</a>
+          to serve the frontend files at <a href="http://localhost:8080">http://localhost:8080</a>.
+        </li>
+
+        <li>
+          <a href="https://github.com/kimmobrunfeldt/chokidar-cli">chokidar-cli</a>
+          to watch changes in <code>**/*.less</code> files and rebuild bundle.css
+          in local development.
+        </li>
+
+        <li>
+          <a href="https://github.com/kimmobrunfeldt/concurrently">concurrently</a>
+          to run three separate commands concurrently with <code>npm start</code>:
+
+          <ul>
+            <li>
+              <code>http-server -c0 .</code> to serve local files.
+            </li>
+
+            <li>
+              <code>npm run watch-js</code> to watch JS files and rebuild bundle.js on each change.
+            </li>
+
+            <li>
+              <code>npm run watch-styles</code> to watch LESS files and rebuild bundle.css on each change.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://github.com/postcss/postcss">PostCSS</a>
+          to automatically apply certain modifications to CSS.
+
+          <ul>
+            <li>
+              <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>
+              plugin for PostCSS
+              to automatically add vendor prefixes to CSS. You can write clean
+              CSS without worrying browser prefixes too much.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
