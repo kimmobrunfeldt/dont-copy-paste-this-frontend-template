@@ -841,7 +841,8 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
-ul {
+ul,
+ol {
   list-style-position: outside;
   margin-left: 1.9rem;
 }

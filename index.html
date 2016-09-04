@@ -56,16 +56,44 @@
 
       <h6 id="how-it-works">How it works</h6>
 
-      <code>npm start</code>
+      <ul class="no-list-styling">
+        <li>
+          <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/index.html">index.html</a>
+          is the entry point to your frontend.
+        </li>
 
-      <p>
+        <li>
+          <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/styles">styles/</a>
+          contains all styles. All code in this directory will be built to <b>bundle.css</b>
+        </li>
 
-      </p>
+        <li>
+          <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/scripts">scripts/</a>
+          contains all JS code. All code in this directory will be built to <b>bundle.js</b>
+        </li>
+
+        <li>
+          <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/assets">assets/</a>
+          contains all static assets, such as images.
+        </li>
+      </ul>
+
+      <p><b>JavaScript production build</b></p>
+
+      <ol>
+        <li>Browserify builds JS code to <b>bundle.js</b></li>
+        <li>UglifyJS minifies <b>bundle.js</b> in place</li>
+      </ol>
+
+      <p><b>CSS production build</b></p>
+
+      <ol>
+        <li>Less builds all styles to <b>bundle.css</b></li>
+        <li>PostCSS applies transformations to <b>bundle.css</b>, e.g. Autoprefixer</li>
+        <li>CleanCSS minifes <b>bundle.css</b></li>
+      </ol>
 
       <h6 id="summary-of-tools">Summary of tools</h6>
-
-
-
       <ul>
         <li>
           <a href="https://github.com/substack/node-browserify">Browserify</a>
@@ -118,24 +146,6 @@
           in local development.
         </li>
 
-        <li>
-          <a href="https://github.com/kimmobrunfeldt/concurrently">concurrently</a>
-          to run three separate commands concurrently with <code>npm start</code>:
-
-          <ul>
-            <li>
-              <code>http-server -c0 .</code> to serve local files.
-            </li>
-
-            <li>
-              <code>npm run watch-js</code> to watch JS files and rebuild bundle.js on each change.
-            </li>
-
-            <li>
-              <code>npm run watch-styles</code> to watch LESS files and rebuild bundle.css on each change.
-            </li>
-          </ul>
-        </li>
 
         <li>
           <a href="https://github.com/postcss/postcss">PostCSS</a>
