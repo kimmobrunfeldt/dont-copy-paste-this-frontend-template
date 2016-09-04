@@ -918,3 +918,77 @@ h4 {
 h5 {
   padding-top: 15px;
 }
+.github-link {
+  display: block;
+  visibility: visible;
+  position: absolute;
+  z-index: 999999;
+  top: 20px;
+  right: 20px;
+}
+.github-link > a {
+  color: #505d6b;
+}
+.github-link > a:hover {
+  color: #1EAEDB;
+}
+.iconlink {
+  border-bottom: none;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em;
+  color: #505d6b;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  padding: 10px;
+}
+.iconlink:hover {
+  color: #505d6b;
+}
+.iconlink {
+  white-space: nowrap;
+  text-decoration: none;
+}
+.iconlink[data-title]:before {
+  font-weight: 300;
+  content: attr(data-title);
+  display: inline-block;
+  position: absolute;
+  bottom: -34px;
+  right: 10px;
+  font-size: 13px;
+  padding: 5px 10px;
+  background: #404040;
+  color: white;
+  border: solid 1px #555;
+  border-radius: 2px;
+  text-decoration: none;
+  width: auto;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 150ms linear, -webkit-transform 150ms linear;
+  transition: opacity 150ms linear, -webkit-transform 150ms linear;
+  transition: opacity 150ms linear, transform 150ms linear;
+  transition: opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear;
+  -webkit-transform: translate3d(0, -8px, 0);
+          transform: translate3d(0, -8px, 0);
+}
+.iconlink.iconlink-right[data-title]:before {
+  left: 10px;
+  right: auto;
+}
+.iconlink.iconlink-light[data-title]:before {
+  background: #f4f4f4;
+  color: #4A4949;
+}
+.iconlink[data-title]:hover:before {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  pointer-events: auto;
+}
+.iconlink i.fa {
+  font-size: 2.827rem;
+}
