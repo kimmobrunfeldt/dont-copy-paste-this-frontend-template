@@ -9,7 +9,7 @@
     "start": "concurrently -p \"[{name}]\" -n \"HTTP,JS,LESS\" -c \"bgBlue.bold,bgMagenta.bold,bgGreen.bold\" \"npm run http-server\" \"npm run watch-js\" \"npm run watch-styles\"",
     "http-server": "http-server -c0 .",
     "watch-js": "API_URL=http://localhost:9001 watchify ./scripts/index.js -t [ babelify --presets [ es2015 ] ] -t envify --debug --verbose -o ./bundle.js",
-    "watch-styles": "chokidar --initial \"**/*.less\" \"./styles/**/*.css\" -c \"npm run build-styles-dev\"",
+    "watch-styles": "npm run build-styles-dev && chokidar \"**/*.less\" \"./styles/**/*.css\" -c \"npm run build-styles-dev\"",
     "build": "npm run build-js && npm run build-styles",
     "build-js": "NODE_ENV=production browserify ./scripts/index.js -t [ babelify --presets [ es2015 ] ] -t envify -o ./bundle.js && npm run minify-js",
     "build-styles": "npm run build-less && npm run postcss && npm run minify-css",

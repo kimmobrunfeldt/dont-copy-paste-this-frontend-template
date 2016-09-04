@@ -5,17 +5,11 @@ const attachFastClick = require('fastclick');
 const config = require('./config');
 
 function main() {
+  console.log('Executing main() ..');
+  console.log(`This bundle.js points to API_URL=${config.API_URL}`);
+
+  // As an example
   attachFastClick(document.body);
-
-  console.log('main() here.');
-
-  fetch(config.API_URL)
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      throw err;
-    });
 }
 
 window.onload = main;

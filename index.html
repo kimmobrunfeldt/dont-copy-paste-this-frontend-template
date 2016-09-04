@@ -154,13 +154,18 @@
                   API_URL=https://my-app-prod.herokuapp.com npm run build
                 </code>
               </p>
+
+              <p>
+                In local development, you can set the variable to point to a
+                locally running backend.
+              </p>
             </li>
           </ul>
         </li>
 
         <li>
           <a href="https://github.com/substack/watchify">watchify</a> is
-          same as browserify but instead of building the <b>bundle.js</b>
+          same as browserify but for local development. Instead of building the <b>bundle.js</b>
           once, it watches changes in <b>.js</b> files and rebuilds
           <b>bundle.js</b> on each change. First build is a bit slow,
           builds after that are very fast.
@@ -312,17 +317,15 @@
 
       <ul>
         <li>
+          <code>npm run build-styles-dev</code> is run
+          immediately before watching is started in case styles have
+          been modified while <b>chokidar-cli</b> was not running.
+        </li>
+
+        <li>
           <b>chokidar-cli</b> listens changes to <code>**/*.less</code> or
           <code>./styles/**/*.css</code> files and runs <code>npm run build-styles-dev</code>
           on each change.
-
-          <ul>
-            <li>
-              <code>--initial</code> runs <code>npm run build-styles-dev</code>
-              immediately before any change is detected in case styles have
-              been modified while <b>chokidar-cli</b> was not running.
-            </li>
-          </ul>
         </li>
       </ul>
 
