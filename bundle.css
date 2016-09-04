@@ -849,7 +849,17 @@ ol {
 li > p {
   margin-top: 1rem;
 }
+h4 {
+  font-size: 2.4rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  font-size: 1.3rem;
+}
 body {
+  font-size: 16px;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   color: #555;
 }
@@ -902,6 +912,9 @@ body {
 .intro {
   padding-top: 30px;
 }
-h6 {
+h4 {
   padding-top: 20px;
+}
+h5 {
+  padding-top: 15px;
 }

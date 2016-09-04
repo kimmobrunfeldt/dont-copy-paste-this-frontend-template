@@ -1,4 +1,4 @@
-# Don't copy-paste this Browserify template
+# Don't copy-paste this frontend template
 
 Project documentation here:
-https://kimmobrunfeldt.github.io/dont-copypaste-this-browserify-template/
+https://kimmobrunfeldt.github.io/dont-copy-paste-this-frontend-template/

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Browserify example</title>
+    <title>Don't copy paste this frontend template</title>
     <meta name="author" content="Kimmo Brunfeldt">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,38 +14,53 @@
   </head>
   <body>
     <div class="container">
-      <h3 class="uppercase">Browserify example</h3>
+      <h3 class="uppercase">Don't copy paste this frontend template</h3>
 
-      <p class="intro">By copy-pasting this project template, you get quickly started in frontend development.
-        Before
-        doing that, <a href="#summary-of-tools">please go through</a>
-        the explanation of why all these tools are needed.
+      <p class="intro">
+        By git cloning this project template, you get quickly started in frontend development.
+        I use this project template in almost all of my static site projects, which
+        need the basic set of frontend tools.
+      </p>
+      <p>
+        <b>Before git clone</b>, please go through
+        the short explanation of <a href="#how-and-why-it-works">how and why it works</a> and see
+        <a href="#packagejson-deps-explained">package.json devDependencies explained</a> to get
+        a quick introduction to all tools. See also
+        <a href="https://github.com/kimmobrunfeldt/dont-copy-paste-this-frontend-template/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Afaq%20">frequently asked questions</a>.
       </p>
 
-      <h6>Features</h6>
+      <h4 id="features">Features</h4>
       <ul>
         <li>
           Provides basic but understandable features which can be fine-tuned later
         </li>
         <li>
-          <code>require('x')</code>
+          Browserify provides <code>require('x')</code>
           syntax in your frontend to organize code and
           use NPM modules
         </li>
         <li>New ES6 features via Babel</li>
+        <li>LESS to organize CSS code across files plus other neat features</li>
+        <li>Autoprefixer so you can stop worrying about CSS browser prefixes</li>
         <li>Automatically build <b>bundle.js</b> or <b>bundle.css</b> after changes to code</li>
         <li>Minify JS and CSS for production</li>
         <li>Build time configuration for JS</li>
-        <li>LESS to organize CSS code across files plus other neat features</li>
-        <li>Autoprefixer so you can stop worrying about CSS browser prefixes</li>
-        <li>No livereload</li>
+        <li>Cross-platform support</li>
+        <li>Customizing and debugging is easy because you fully understand the stack</li>
+        <li>GitHub Pages friendly</li>
       </ul>
 
-      <h6>Commands</h6>
+      <h4>Get started</h4>
+
+      <p>
+        <i>You need to have Node.js environment installed before anything.</i>
+        Clone this repository, run <code>npm install</code> and you're ready to
+        run the following commands.
+      </p>
 
       <ul class="no-list-styling">
         <li>
-          <code>npm start</code> Open your browser at <a href="http://localhost:8080">http://localhost:8080</a>
+          <code>npm start</code> To develop locally. Open your browser at <a href="http://localhost:8080">http://localhost:8080</a>
           and start coding.
         </li>
         <li>
@@ -53,10 +68,34 @@
         </li>
       </ul>
 
+      <p>
+        <i>There are other commands too, but they are only used internally by these
+        two main commands. These other commands are explained in
+        <a href="#packagejson-scripts-reference">package.json scripts reference</a>.
+        </i>
+      <p>
 
-      <h6 id="how-it-works">How it works</h6>
+      <h4 id="how-and-why-it-works">How and why it works</h4>
 
-      <ul class="no-list-styling">
+      <p>
+        Everything happens via <a href="http://substack.net/task_automation_with_npm_run">npm scripts</a>.
+        The project "configuration" is in package.json, which in practice means
+        command line tools and their options. These tools all solve a specific problem, and
+        they do it well.
+        You can find all exact shell commands from
+        <a href="https://github.com/kimmobrunfeldt/dont-copy-paste-this-frontend-template/blob/c4f64279958fedb39dae1e4183c3e08681a4f11f/package.json#L7-L19">package.json "scripts"</a>
+        section.
+      </p>
+
+      <p>
+        If you spot a new tool, check what it is and
+        why it is used from <a href="#packagejson-deps-explained">package.json devDependencies explained</a>
+        section.
+      </p>
+
+      <h5>Project structure</h5>
+
+      <ul>
         <li>
           <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/index.html">index.html</a>
           is the entry point to your frontend.
@@ -64,12 +103,16 @@
 
         <li>
           <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/styles">styles/</a>
-          contains all styles. All code in this directory will be built to <b>bundle.css</b>
+          contains all styles. All code in this directory will be built to <b>bundle.css</b>.
+          <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/styles/index.less">styles/index.less</a>
+          is the entrypoint to LESS code.
         </li>
 
         <li>
           <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/scripts">scripts/</a>
-          contains all JS code. All code in this directory will be built to <b>bundle.js</b>
+          contains all JS code. All code in this directory will be built to <b>bundle.js</b>.
+          <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/scripts/index.js">scripts/index.js</a>
+          is the entrypoint to JS code.
         </li>
 
         <li>
@@ -78,35 +121,30 @@
         </li>
       </ul>
 
-      <p><b>JavaScript production build</b></p>
+      <p>All your frontend code will be in three files:
+        <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/index.html">index.html</a>,
+        <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/bundle.js">bundle.js</a>, and
+        <a href="https://github.com/kimmobrunfeldt/dont-copypaste-this-browserify-template/blob/gh-pages/bundle.css">bundle.css</a>
+        – simple.
+      </p>
 
-      <ol>
-        <li>Browserify builds JS code to <b>bundle.js</b></li>
-        <li>UglifyJS minifies <b>bundle.js</b> in place</li>
-      </ol>
+      <h4 id="packagejson-deps-explained">package.json devDependencies explained</h4>
 
-      <p><b>CSS production build</b></p>
-
-      <ol>
-        <li>Less builds all styles to <b>bundle.css</b></li>
-        <li>PostCSS applies transformations to <b>bundle.css</b>, e.g. Autoprefixer</li>
-        <li>CleanCSS minifes <b>bundle.css</b></li>
-      </ol>
-
-      <h6 id="summary-of-tools">Summary of tools</h6>
       <ul>
         <li>
-          <a href="https://github.com/substack/node-browserify">Browserify</a>
-          to divide JS code across files.
+          <a href="https://github.com/substack/node-browserify">browserify</a>
+          is used to build production build of <b>bundle.js</b>.
           <ul>
             <li>
-              <a href="https://github.com/babel/babelify">Babel transform</a> for Browserify
-              with <a href="https://babeljs.io/docs/plugins/preset-es2015/">ES2015 preset</a>
+              <a href="https://github.com/babel/babelify">babelify</a> is a
+              <a href="https://babeljs.io/">Babel</a>
+              plugin for Browserify and it uses
+              <a href="https://babeljs.io/docs/plugins/preset-es2015/">babel-preset-es2015</a>
               to support new ES6 features.
             </li>
 
             <li>
-              <a href="https://github.com/hughsk/envify">Envify transform</a>
+              <a href="https://github.com/hughsk/envify">envify</a> is a plugin
               for Browserify to allow build time configuration.
 
               <p>
@@ -121,8 +159,34 @@
         </li>
 
         <li>
-          <a href="https://github.com/less/less.js">Less.js</a>
-          to divide CSS code across files.
+          <a href="https://github.com/substack/watchify">watchify</a> is
+          same as browserify but instead of building the <b>bundle.js</b>
+          once, it watches changes in <b>.js</b> files and rebuilds
+          <b>bundle.js</b> on each change. First build is a bit slow,
+          builds after that are very fast.
+        </li>
+
+        <li>
+          <a href="https://github.com/less/less.js">less</a>
+          is a LESS compiler written with NodeJS. Used to divide CSS code across files.
+        </li>
+
+        <li>
+          <a href="https://github.com/kimmobrunfeldt/concurrently">concurrently</a>
+          is used to run three separate commands concurrently when you type <code>npm start</code>.
+          It is just for convenience, so that you don't need to run three separate
+          terminals.
+          <ul>
+            <li>
+              <code>http-server -c0 .</code> to serve local files.
+            </li>
+            <li>
+              <code>npm run watch-js</code> to watch JS files and rebuild bundle.js on each change.
+            </li>
+            <li>
+              <code>npm run watch-styles</code> to watch LESS files and rebuild bundle.css on each change.
+            </li>
+          </ul>
         </li>
 
         <li>
@@ -131,7 +195,7 @@
         </li>
 
         <li>
-          <a href="https://github.com/mishoo/UglifyJS">UglifyJS</a>
+          <a href="https://github.com/mishoo/UglifyJS">uglifyjs</a>
           for minifying JS.
         </li>
 
@@ -148,17 +212,208 @@
 
 
         <li>
-          <a href="https://github.com/postcss/postcss">PostCSS</a>
+          <a href="https://github.com/postcss/postcss">postcss-cli</a>
           to automatically apply certain modifications to CSS.
 
           <ul>
             <li>
-              <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>
-              plugin for PostCSS
+              <a href="https://github.com/postcss/autoprefixer">autoprefixer</a>
+              is a plugin for PostCSS
               to automatically add vendor prefixes to CSS. You can write clean
               CSS without worrying browser prefixes too much.
             </li>
           </ul>
+        </li>
+      </ul>
+
+      <h4 id="packagejson-scripts-reference">package.json scripts reference</h4>
+
+      <p>
+        Each npm script is a fairly simple one-line command. This chapter contains
+        very detailed explanation of these commands and written with beginners
+        in mind. It is <b>much more important</b>
+        to know and <a href="#packagejson-deps-explained">understand the tools</a>
+        instead of memorizing what each of these commands do.
+      </p>
+
+      <h5>JavaScript local development watch (<code>npm run watch-js</code>)</h5>
+
+      <p>
+        Full command:
+
+        <pre><code>API_URL=http://localhost:9001 watchify ./scripts/index.js -t [ babelify --presets [ es2015 ] ] -t envify --debug --verbose -o ./bundle.js</code></pre>
+      </p>
+
+      <ul>
+        <li>
+          Watchify builds JS code to <b>bundle.js</b>, starts waiting for changes
+          in JS code and rebuilds <b>bundle.js</b> when needed.
+        </li>
+
+        <li>watchify flags
+
+          <ul>
+            <li><code>-t</code> Use a given browserify transform plugin. By surrounding the plugin with brackets, you can give options to the transform plugin.</li>
+            <li><code>--debug</code> Enables source maps to ease debugging</li>
+            <li><code>--verbose</code> Increases watchify verbosity</li>
+            <li><code>-o</code> Which file the bundle is written to</li>
+          </ul>
+        </li>
+
+        <li>
+          Watchify supports the same option as browserify. So you can run:
+          <code>./node_modules/.bin/browserify -h</code> to figure out what each flag does.
+        </li>
+
+        <li>
+          <code>API_URL</code> is given as an environment variable so that <b>envify</b>
+          knows to replace <code>process.env.API_URL</code> variable in code with
+          that given value. This allows us to build <b>bundle.js</b>
+          which connects to e.g. QA backend.
+        </li>
+      </ul>
+
+      <h5>JavaScript production build (<code>npm run build-js</code>)</h5>
+
+      <p>
+        Full command:
+
+        <pre><code>NODE_ENV=production browserify ./scripts/index.js -t [ babelify --presets [ es2015 ] ] -t envify -o ./bundle.js &amp;&amp; npm run minify-js</code></pre>
+      </p>
+
+      <p><b>Note:</b> you need to define <code>API_URL</code> environment variable
+        before running this command. You can set it in e.g. in your deployment script.
+      </p>
+
+      <ul>
+        <li>
+          <code>NODE_ENV=production</code> is set so that your code
+          or e.g. React can disable certain development features. You could for example
+          disable logging, or possible debugging tools in production mode.
+        </li>
+        <li>
+          browserify builds <b>bundle.js</b> and exits.
+          Command line options are almost the same as with watchify. Source maps
+          are not created.
+        </li>
+        <li>
+          After browserify creates <b>bundle.js</b>, the whole file is minified
+          in place with uglifyjs (<code>npm run minify-js</code>).
+        </li>
+      </ul>
+
+      <h5>CSS local development watch (<code>npm run watch-styles</code>)</h5>
+
+      <p>
+        Full command:
+
+        <pre><code>npm run build-styles-dev &amp;&amp; chokidar '**/*.less' './styles/**/*.css' -c 'npm run build-styles-dev'</code></pre>
+      </p>
+
+      <ul>
+        <li>
+          <b>chokidar-cli</b> listens changes to <code>**/*.less</code> or
+          <code>./styles/**/*.css</code> files and runs <code>npm run build-styles-dev</code>
+          on each change.
+
+          <ul>
+            <li>
+              <code>--initial</code> runs <code>npm run build-styles-dev</code>
+              immediately before any change is detected in case styles have
+              been modified while <b>chokidar-cli</b> was not running.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h5>CSS local development build (<code>npm run build-styles-dev</code>)</h5>
+
+      <p>
+        Full command:
+
+        <pre><code>npm run build-less &amp;&amp; npm run postcss &amp;&amp; echo 'Styles built!'</code></pre>
+      </p>
+
+      <ul>
+        <li>
+          <code>npm run build-less</code> builds <b>bundle.css</b>
+        </li>
+
+        <li>PostCSS applies transformations to <b>bundle.css</b>, e.g. Autoprefixer</li>
+        <li>After everything, we log something to console for convenience</li>
+      </ul>
+
+      <h5>CSS production build (<code>npm run build-styles</code>)</h5>
+
+      <p>
+        Full command:
+
+        <pre><code>npm run build-less &amp;&amp; npm run postcss &amp;&amp; npm run minify-css</code></pre>
+      </p>
+
+      <ul>
+        <li>
+          <code>npm run build-less</code> builds <b>bundle.css</b>
+        </li>
+
+        <li>PostCSS applies transformations to <b>bundle.css</b>, e.g. Autoprefixer</li>
+        <li>
+          <code>npm run minify-css</code> minifies <b>bundle.css</b> using <b>clean-css</b>.
+        </li>
+      </ul>
+
+      <h4 id="downsides">Downsides</h4>
+
+      <p>
+        As much as I like npm scripts and browserify, here are some downsides in the
+        setup.
+      </p>
+
+      <ul>
+        <li>
+          package.json scripts section is ugly.
+
+          <p>
+            <ul>
+              <li>Some commands are quite long</li>
+              <li>
+                package.json doesn't allow comments to explain the scripts
+                <i>(ok it does but they are ugly hacks)</i>
+              </li>
+              <li>
+                It would help to split commands into separate bash scripts,
+                but then you loose cross-platform support.
+              </li>
+              <li>
+                You can't group scripts by inserting line breaks because
+                <code>npm install</code> autoformats the package.json again.
+              </li>
+            </ul>
+
+            On the other hand I would still argue that the configuration is
+            simple, even though it looks messy. You always know what happens
+            by looking at the command, and you can debug the individual steps
+            by copy pasting the commands into your shell.
+          </p>
+        </li>
+
+        <li>
+          If you hate command line tools, this setup will be annoying.
+          On the other hand maybe now is a good time to learn how powerful
+          CLI tools can be.
+        </li>
+
+        <li>
+          When using npm scripts, it's easy to accidentally create commands
+          which are not supported in Windows. <b>You should use</b> NodeJS tools
+          which support all platforms: Linux, Mac and Windows.
+
+          <p><i>
+            This problem can be avoided by running projects inside <a href="https://www.docker.com/">Docker</a>
+            or <a href="https://www.vagrantup.com/">Vagrant</a>.
+            This <a href="http://stackoverflow.com/questions/16647069/should-i-use-vagrant-or-docker-for-creating-an-isolated-environment">StackOverflow discussion</a>
+            helps to understand why to use either of them.
+          </i></p>
         </li>
       </ul>
     </div>
